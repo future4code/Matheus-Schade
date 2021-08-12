@@ -1,0 +1,3 @@
+# Aprendizados da semana
+
+Nessa primeira semana de trabalhos na **Labenu**, pude aprender como proceder com a instalação de diversos programas que serão essenciais para o meu desenvolvimento durante o curso, e também durante a minha carreira. São eles o Git, VSCode, etc. Também, pude aprender a utilizar o terminal bash do Git, junto com alguns comandos,bem como comandos git para subir os meus futuros projetos e códigos ao Github.
