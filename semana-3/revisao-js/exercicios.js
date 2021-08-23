@@ -54,7 +54,27 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-  
+   objetoEntreDoisNumeros = {}
+   if (num1 > num2){
+       objetoEntreDoisNumeros.maiorNumero = num1
+   } else {
+       objetoEntreDoisNumeros.maiorNumero = num2
+   }
+
+   if (num1 >= num2 && num1 % num2 === 0) {
+       objetoEntreDoisNumeros.maiorDivisivelPorMenor = true
+   } else if (num1 < num2 && num2 % num1 === 0) {
+       objetoEntreDoisNumeros.maiorDivisivelPorMenor = true
+   } else {
+       objetoEntreDoisNumeros.maiorDivisivelPorMenor = false
+   }
+
+   if (num1 > num2) {
+       objetoEntreDoisNumeros.diferenca = num1 - num2
+   } else {
+       objetoEntreDoisNumeros.diferenca = num2 - num1
+   }
+   return objetoEntreDoisNumeros
 }
 
 // EXERCÍCIO 08
