@@ -122,7 +122,9 @@ function retornaChamadaDeFilme(filme) {
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-
+   return novoUsuario = {... pessoa,
+      nome: "ANÔNIMO"
+      }
 }
 
 // EXERCÍCIO 13A
