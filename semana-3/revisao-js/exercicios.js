@@ -20,7 +20,13 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-
+   novoArray = []
+   for (let number of array){
+       if (number % 2 === 0) {
+           novoArray.push(number) 
+       }
+}
+   return novoArray
 }
 
 
