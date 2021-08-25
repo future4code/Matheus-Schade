@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vendas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body class="body-estilo">
+
+    <header class="header-stilo">
+
+        <h1 class="boas-vindas">
+            <center>ESTA É A VOX FANTASY STORE!</center>
+        </h1>
+
+        <div class="div-estilo">
+            <h3>Aqui você encontra <u>TUDO</u> para sua fantasia!</h3>
+
+            <ul>
+                <li>Gorros</li>
+                <li>Chapéus</li>
+                <li>Luvas</li>
+                <li>Máscaras</li>
+                <li>Maquiagens</li>
+                <li>Roupas</li>
+                <li>Equipamentos para efeitos visuais e sonoros</li>
+                <li>Snacks</li>
+
+            </ul>
+            <p>Tudo que você precisa para ter a <b>melhor</b> fantasia <br>
+                da festa ou ser o <b>melhor</b> cosplay do evento.</p>
+            <h2>Acesse nosso acervo e descubra! </h2>
+        </div>
+
+        <div class="linha-para-botoes">
+            <a class="botoes-header" href="./index.html">PÁGINA INICIAL</a>
+            <a class="botoes-header" href="./ctrl-estoque.html">CONTROLE DE ESTOQUE</a>
+            <a class="botoes-header" href="./add-produto.html">ADICIONAR PRODUTOS</a>
+            <a class="botoes-header" href="./funcionarios.html">FUNCIONÁRIOS</a>
+            <a class="botoes-header" href="./vendas.html">VENDAS</a>
+        </div>
+
+    </header>
+
+    <form action="ctrl-estoque.html" method="post">
+
+    <br>
+    <span class="div-estilo">
+
+        <label for="pagamento"> Forma de Pagamento </label>
+        <select required name="pagamento">
+            <option value=""></option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartao-de-credito">Cartão de Crédito</option>
+            <option value="cartao-de-debito">Cartão de Débito</option>
+            <option value="pix">Pix</option>
+
+        </select>
+
+    </span>
+    <span class="div-estilo">
+
+        <label for="vendedor"> Vendedor(a) </label>
+        <select required name="vendedor">
+            <option value=""></option>
+            <option value="valmir">Valmir</option>
+            <option value="ale">Alessandra</option>
+        </select>
+
+    </span>
+    <br><br>
+
+    <div class="div-estilo">
+        <table>
+
+            <tr>
+                <th>Produto</th>
+                <th>Preço Unitário</th>
+                <th>Quantidade</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <select required name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="pagamento">
+                        <option value=""></option>
+                        <option value="mago">Gorro Mago</option>
+                        <option value="hannibal">Máscara Hannibal</option>
+                        <option value="enfermeira">Fantasia Enfermeira</option>
+                        <option value="mascara-jack">Máscara Jack</option>
+                        <option value="mascara-batman">Máscara Batman</option>
+                        <option value="oculos-ferris">Óculos Ferris Bueller</option>
+                        <option value="mascara-porco">Máscara Focinho Porco</option>
+            
+                    </select>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="text" id="preco" name="preco" required>
+                </td>
+                <td>
+                    <input class="caixas-de-texto-padrao" type="number" id="preco" name="preco" required>
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="div-estilo" class="form-add">
+            <button type="submit">Finalizar Venda</button>
+        </div>
+
+        <dialog>
+
+    </div>
+
+    </form>
+
+    <footer class="footer">
+
+        <div class="div-estilo">
+
+            <p>www.voxfantasystore.com.br</p>
+            <p>Copyright © 2021 TODOS OS DIREITOS RESERVADOS.</p>
+            <a class="botoes-footer" href="./index.html">Voltar ao Início</a>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
