@@ -71,7 +71,15 @@ div img {
     color: white;
 }
 
-
+div>p#formatacao-texto-descricao {
+    background-color: #2274a5;
+    color: white;   
+    margin: 0 auto;
+    width: 200px;
+    display: block;
+    font-size: 105%;
+    padding-top: 150px;
+}
 
 #container-de-descricao>ol {
     padding: 15px 0px;
