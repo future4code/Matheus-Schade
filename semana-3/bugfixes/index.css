@@ -58,8 +58,14 @@ div img {
 .icone {
     height: 15px;
 }
-.estilo-tabelas {
+.estilo-tabelas-produtos {
     text-align: center;
+    font-size: 16pt;
+}
+.estilo-imagens-produtos {
+    max-width: 75px; 
+    max-height: 75px;
+    margin-left: 15px;;
 }
 
 
