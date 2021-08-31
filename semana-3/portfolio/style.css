@@ -1,0 +1,261 @@
+* {
+    background-color: #6a584b;;
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+
+/*BARRA DE NAVEGAÇÃO*/
+.barra-de-navegacao {
+    background-color: #9e9086;
+    position: fixed;
+    height: 25px;
+    color: white;
+    z-index: 1;
+}
+
+.botoes-navegacao {
+    background-color: #9e9086;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0px 20px;
+    margin: 0px ;
+    text-align:center;
+    font-size: 19px;
+    border-radius: 5px;
+    
+}
+.botoes-navegacao:hover {
+    background-color: #6a584b;
+}
+.botoes-navegacao:active {
+    color: rgb(223, 219, 219);;
+}
+
+/*SEÇÃO: DESCRIÇÃO PESSOAL*/
+.descricao-pessoal {
+    max-height: 100vh;
+    background-color: #d9d9d3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #6a584b;
+    text-align: center;
+}
+.texto-descricao {
+    max-height: 100vh;
+    background-color: #d9d9d3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #6a584b;
+    text-align: center;
+    width: 600px;
+}
+#foto-perfil {
+    max-width:360px;
+    max-height:280px;
+    width: auto;
+    height: auto;
+}
+
+/*SEÇÃO: INSTITUIÇÕES DE ENSINO E EMPREGADORES*/
+.abaixo-intro {
+    background-color: #d9d9d3;
+    max-height: 4000px;
+    padding-top: 80px;
+    position:relative;
+}
+.instituicoes {
+    height: 34vh;
+    width: 440px;
+    background-color: #d4d4d1;
+    color: #6a584b;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    display: inline;
+    float:left;
+    margin-left: 0px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    position:relative;
+    left: 40px;
+}
+.empregadores {
+    height: 34vh;
+    width: 440px;
+    background-color: #d4d4d1;
+    color: #6a584b;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    display: inline;
+    float:right;
+    margin-right: 0px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    position:relative;
+    right: 40px;
+}
+.texto-instituicoes-empregadores {
+    background-color: #d4d4d1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #6a584b;
+    display: inline;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    position:relative;
+}
+.texto-empregadores {
+    background-color: #d4d4d1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #6a584b;
+    display: inline;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    position:relative;
+}
+
+/*SEÇÃO PORTFÓLIO E PROJETOS*/
+
+.projeto-a {
+    height: 34vh;
+    width: 440px;
+    background-color: #d4d4d1;
+    color: #6a584b;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    display: inline;
+    float:left;
+    margin-left: 0px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    position:relative;
+    left: 40px;
+}
+.projeto-b {
+    height: 34vh;
+    width: 440px;
+    background-color: #d4d4d1;
+    color: #6a584b;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    display: inline;
+    float:right;
+    margin-right: 0px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    position:relative;
+    right: 40px;
+}
+.imagem-projetos {
+    width: 450px;
+    border-radius: 10px;
+}
+/*SEÇÃO SKILLS PESSOAIS*/
+.soft-skills {
+    height: 34vh;
+    width: 440px;
+    background-color: #d4d4d1;
+    color: #6a584b;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    display: inline;
+    float:left;
+    margin-left: 0px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    position:relative;
+    left: 40px;
+}
+.hard-skills {
+    height: 34vh;
+    width: 440px;
+    background-color: #d4d4d1;
+    color: #6a584b;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    display: inline;
+    float:right;
+    margin-right: 0px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    position:relative;
+    right: 40px;
+}
+.texto-skills {
+    background-color: #d4d4d1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #6a584b;
+    display: inline;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    position:relative;
+}
+.redes-sociais {
+    max-width:85px;
+    max-height:85px;
+    background-color: #d9d9d3;
+    display: inline;
+    text-decoration: none;
+}
+.formulario {
+    background-color: #d4d4d1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width:250px;
+    max-height:85px;
+}
+
+.texto-form {
+    background-color: #d9d9d3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline;
+}
+.form {
+    max-width:85px;
+    background-color: #d9d9d3;
+    text-decoration: none;
+    text-align: justify;
+    display: inline;
+    padding: 0 0 0px 0px;
+}
+.imagem-projetos {
+    max-height: 600px;
+    max-width: 600px;
+    background-color: #d4d4d1;
+    color: #6a584b;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    margin-right: 0px;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+
+/*FOOTER*/
+.footer {
+    background-color: #9e9086;
+    color: white;
+    font-size: 19px;
+    text-decoration: none;
+}
+.footer-texto {
+    background-color: #9e9086;
+    color: white;
+    font-size: 19px;
+    text-decoration: none;
+}
+.footer-texto:hover {
+    background-color: #6a584b;
+}
+.footer-texto:active {
+    color: rgb(223, 219, 219);
+}
