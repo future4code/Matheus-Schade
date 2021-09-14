@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
+    max-width: 100vw;
+}
+header, footer {
+    display: flex;
+    background-color: rgb(10, 161, 10);
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 15px;
+    grid-column: 1/3;
+}
+.card-video {
+    display: grid;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 1px 1px 5px darkgray;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+.imagem-card {
+    width: 100%;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 35px;
+
+}
+.img-p {
+    padding: 15px;
+}
+a {
+    text-decoration:none;
+    color: inherit;
+}
+video {
+    width: 75vw; 
+    border-radius: 5px;
+}
+section {
+    padding: 40px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+input {
+    width: 120px;
+    height: 28px;
+    padding-left: 15px;
+    margin-right: 50px;
+    border-radius: 5px;
+    border: 1px solid green;
+}
+section>h2 {
+    padding-bottom: 20px;
+}
+
+@media screen and (min-device-width: 100px) and (max-device-width: 520px) {
+    main {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        column-gap: 0;
+        padding: 15px;
+        width: 100vw;
+        align-items: center;  
+    }
+    input {
+        margin-right: 0;
+    }
+    .card-video {
+        width: 90vw;
+    }
+    video {
+        width: 90vw; 
+        border-radius: 5px;
+    }
+    section {
+        padding: 18px 0 0 0px;
+        justify-content: start;
+    }
+    
+}
+@media screen and (min-device-width: 521px) and (max-device-width: 720px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 10px;
+        column-gap: 10px;
+        padding: 35px; 
+        width: 100vw;
+        justify-content: center;
+    }
+    input {
+        margin-right: 0;
+    }
+    .card-video {
+        width: 45vw;
+    }
+    video {
+        width: 90vw; 
+        border-radius: 5px;
+    }
+    section {
+        padding: 18px 0 0 0px;
+        justify-content: start;
+    }
+}
+
+ @media screen and (min-device-width: 721px) and (max-device-width: 1023px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row: 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 10px;
+        padding: 35px; 
+        width: 100vw;
+        justify-content: center;
+    }
+    input {
+        margin-right: 0;
+    }
+    .card-video {
+        width: 31vw;
+    }
+    video {
+        width: 90vw; 
+        border-radius: 5px;
+    }
+    section {
+        padding: 18px 0 0 0px;
+        justify-content: start;
+        
+    }
+} 
