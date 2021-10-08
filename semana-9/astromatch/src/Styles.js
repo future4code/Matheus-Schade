@@ -15,7 +15,7 @@ height: 550px;
   width: 100vw;
   }
 
-  @media (min-width: 401px) and (max-width: 2100px) {
+  @media (min-width: 401px) and (max-width: 1100px) {
     height: 100vh;
     width: 100vw;
   }

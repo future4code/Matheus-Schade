@@ -18,7 +18,6 @@ const Matches = (props) => {
 
         try {
             const response = await axios.get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/${aluno}/matches`)
-            console.log(response.data.matches)
             setMatches(response.data.matches)
         } catch (error) {
             alert(error.message)

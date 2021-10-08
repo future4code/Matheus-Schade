@@ -24,7 +24,7 @@ border-radius: 10px;
   margin-top: 68px;
   border-radius: 14px;
   }
-  @media(min-width: 801px) and (max-width: 1200px){
+  @media(min-width: 801px) and (max-width: 100px){
   margin-top: 100px;
   border-radius: 18px;
   }
@@ -48,7 +48,7 @@ height: 15%;
   font-size: 30px;
   }
 
-  @media(min-width: 801px) and (max-width: 1200px){
+  @media(min-width: 801px) and (max-width: 1100px){
   font-size: 38px;
   margin-top: 22px;
   }
@@ -95,7 +95,7 @@ background-color: whitesmoke;
     height: 100px;
   }
 
-  @media(min-width: 801px) and (max-width: 1200px) {
+  @media(min-width: 801px) and (max-width: 1100px) {
     left: 83%;
     bottom: 13%;
     width: 10vw;
@@ -125,7 +125,7 @@ p {
     font-size: 20px;
   }
 
-  @media(min-width: 801px) and (max-width: 1200px) {
+  @media(min-width: 801px) and (max-width: 1100px) {
     font-size: 25px;
   }
 }

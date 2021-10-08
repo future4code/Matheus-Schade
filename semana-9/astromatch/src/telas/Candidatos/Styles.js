@@ -30,7 +30,7 @@ height: 57%;
   margin-top: 60px;
   height: 61%;
   }
-@media (min-width: 801px) and (max-width: 1200px) {
+@media (min-width: 801px) and (max-width: 1100px) {
   margin-top: 100px;
   }
 
@@ -64,7 +64,7 @@ h3, h5, p {
   font-size: 30px;
   }
 
-  @media (min-width: 801px) and (max-width: 1200px) {
+  @media (min-width: 801px) and (max-width: 1100px) {
     font-size: 38px;
     }
 
@@ -91,7 +91,7 @@ button {
   color: black;
   border: 0.5px solid black;
 
-  @media(min-width: 501px) and (max-width: 1200px){
+  @media(min-width: 501px) and (max-width: 1100px){
   height: 58px;
   font-size: 30px;
   }

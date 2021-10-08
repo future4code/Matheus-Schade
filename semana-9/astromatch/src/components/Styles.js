@@ -30,7 +30,7 @@ button {
     font-size: 18px;
     }
 
-    @media (min-width: 801px) and (max-width: 1200px) {
+    @media (min-width: 801px) and (max-width: 1100px) {
     height: 60px;
     width: 12vw;
     display: flex;
@@ -63,7 +63,7 @@ h3 {
     font-size: 28px;
     }
 
-    @media (min-width: 801px) and (max-width: 1200px) {
+    @media (min-width: 801px) and (max-width: 1100px) {
     font-size: 35px;
     }
     :hover {

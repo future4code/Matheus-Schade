@@ -22,7 +22,6 @@ const Candidatos = (props) => {
       const response = await axios.get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/${aluno}/person`)
       setCandidato(response.data.profile)
     } catch (error) {
-      console.log(error)
       alert(error)
     }
   };
@@ -37,10 +36,9 @@ const Candidatos = (props) => {
     }
     try {
       const response = await axios.post(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/${aluno}/choose-person`, body, headers)
-      console.log(response.data)
       getProfileToChoose()
     } catch (error) {
-      console.log(error)
+      alert(error)
     }
   };
 
