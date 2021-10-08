@@ -1,24 +1,7 @@
-import React, { useState, useEffect } from "react"
-import styled, {createGlobalStyle} from "styled-components"
-import Candidatos from "./telas/Candidatos"
-import Matches from "./telas/Matches"
-
-
-const TelaApp = styled.div`
-display: flex;
-flex-direction: column;
-`
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-`
+import React, { useState } from "react"
+import Candidatos from "./telas/Candidatos/Candidatos"
+import Matches from "./telas/Matches/Matches"
+import { TelaApp, GlobalStyle, } from "./Styles"
 
 
 const App = () => {
@@ -31,27 +14,24 @@ const App = () => {
   const choosePage = () => {
     switch (currentPage) {
       case "Candidatos":
-        return <Candidatos changePage={changePage} />
+        return <Candidatos
+          changePage={changePage}
+          currentPage={currentPage}
+        />
       case "Matches":
-        return <Matches changePage={changePage} />
+        return <Matches
+          changePage={changePage}
+          currentPage={currentPage} />
+      default:
+        return alert("Houve um erro. Tente novamente mais tarde!");
     }
-
   }
 
-
   return (
-
     <TelaApp>
       <GlobalStyle />
-
       {choosePage()}
-
-
-
     </TelaApp>
-
-
-
   )
 }
 

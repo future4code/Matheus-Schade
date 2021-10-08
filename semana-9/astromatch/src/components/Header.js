@@ -1,36 +1,29 @@
-import React, {useState, useEffect} from "react"
-import styled from "styled-components"
-
-const Head = styled.div`
-background-color: #156553;
-height: 5vh;
-display: flex;
-width: 30vw;
-align-items: center;
-justify-content: space-between;
-
-button {
-    margin: 0 10px;
-    border-radius: 20px;
-}
-`
-
-
+import React from "react"
+import { Head, Base } from "./Styles"
+import { AiFillFire } from "react-icons/ai"
 
 const Header = (props) => {
 
     return (
 
-        <Head>
-            <div>
-                <button onClick={() => props.changePage("Candidatos")}>Matches</button>
-            </div>
-            <div>ASTROMATCH</div>
-            <div>
-                <button onClick={() => props.changePage("Matches")}>Perfis</button>
-            </div>
-
-        </Head>
+        <Base>
+            {(props.currentPage === "Candidatos") ? (
+                <Head>
+                    <div>
+                        <button onClick={() => props.changePage("Matches")}>matches</button>
+                    </div>
+                    <h3>astroMatch <AiFillFire /></h3>
+                    
+                </Head >
+            ) : (
+                <Head>
+                    <div>
+                        <button onClick={() => props.changePage("Candidatos")}>perfis</button>
+                    </div>
+                    <h3>astroMatch <AiFillFire /></h3>
+                </Head>
+            )}
+        </Base>
 
     )
 }
