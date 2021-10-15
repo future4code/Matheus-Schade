@@ -24,5 +24,11 @@ button {
     width: 25%;
     height: 2em;
 }
-
+`
+export const Form = styled.form`
+display: flex ;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
 `
