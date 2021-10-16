@@ -26,19 +26,18 @@ export const TripDetails = () => {
     }
 
     const removeTrip = (id) => {
+        if (window.confirm(`Deseja realmente apagar essa viagem?`)) {
         axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/${person}/trips/${id}`, {
             headers: {
                 auth: token,
             }
         })
             .then((reponse) => {
-                console.log(`Deu certo: `, reponse.data)
                 alert('Viagem deletada com sucesso!')
             })
             .catch((error) => {
                 alert('Não foi possível deletar essa viagem!.')
-                console.log(`Deu Errado: `, error)
-            })
+            })}
     }
 
 
@@ -49,18 +48,10 @@ export const TripDetails = () => {
 
             <h1>Lista de Viagens</h1>
 
-            {/* Caso de mensagem de erro */}
-            {!isLoadingTrips && errorRequest && <p>{errorRequest.message} </p>}
-
-            {/* Caso de retorno vazio  */}
-            {!isLoadingTrips && trips && trips.length === 0 && (<p> Não foi encontrado nenhum resultado </p>)}
-
-            {/* Caso de sucesso */}
-
             {trips && trips.map((item) => <EachTrip key={item.id}>
                 <h2>{item.name} </h2>
-                <button onClick={() => goToDetailTripPage(item.id)}>DETALHES</button>
-                <button onClick={() => removeTrip(item.id)}>EXCLUIR VIAGEM</button>
+                <button onClick={() => goToDetailTripPage(item.id)}>Detalhes</button>
+                <button onClick={() => removeTrip(item.id)}>Excluir Viagem</button>
             </EachTrip>
             )}
 

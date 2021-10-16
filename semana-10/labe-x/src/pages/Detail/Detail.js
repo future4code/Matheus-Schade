@@ -22,14 +22,6 @@ export const Detail = (id) => {
         getTripDetail()
     }, [chosenTrip])
 
-    const goBack = () => {
-        history.goBack()
-    }
-
-    const goToHome = () => {
-        history.push(`/`)
-    }
-
     const getTripDetail = (id) => {
         axios.get(`${urlBase}/${person}/trip/${params.id}`, {
             headers: {
@@ -40,23 +32,25 @@ export const Detail = (id) => {
                 setChosenTrip(response.data.trip)
 
             }).catch((error) => {
-                // console.log(`ERRORRRRRRRRRRR`, error)
+                alert(`Erro: `, error)
             })
     }
 
     const removeTrip = (id) => {
-        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/${person}/trips/${params.id}`, {
-            headers: {
-                auth: token,
-            }
-        })
-            .then((reponse) => {
-                alert('Viagem deletada com sucesso!')
-                history.push("/admin/trips-detail")
+        if (window.confirm(`Deseja realmente apagar essa viagem?`)) {
+            axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/${person}/trips/${params.id}`, {
+                headers: {
+                    auth: token,
+                }
             })
-            .catch((error) => {
-                alert('Não foi possível deletar essa viagem!.')
-            })
+                .then((reponse) => {
+                    alert('Viagem deletada com sucesso!')
+                    history.push("/admin/trips-detail")
+                })
+                .catch((error) => {
+                    alert('Não foi possível deletar essa viagem!.')
+                })
+        }
     }
 
 
@@ -89,7 +83,7 @@ export const Detail = (id) => {
             <h1>Detalhes da Viagem</h1>
             {chosenTrip ? (
                 <Description>
-                    <p><strong>Nome: </strong>{chosenTrip.name}</p>
+                    <h1>{chosenTrip.name}</h1>
                     <p><strong>Data: </strong>{chosenTrip.date}</p>
                     <p><strong>Duração: </strong>{chosenTrip.durationInDays} dias</p>
                     <p><strong>Descrição da Viagem: </strong>{chosenTrip.description}</p>
@@ -111,7 +105,7 @@ export const Detail = (id) => {
                 ) : (
                     chosenTrip.candidates.map((item) => {
                         return (<Candidates key={item.id}>
-                            <p><strong>Nome: </strong>{item.name}</p>
+                            <p><strong>Nome: {item.name}</strong></p>
                             <p><strong>Idade: </strong> {item.age}</p>
                             <p><strong>Profissão: </strong> {item.profession}</p>
                             <p><strong>País do candidato: </strong> {item.country}</p>

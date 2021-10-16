@@ -1,11 +1,12 @@
 import React from "react"
 import { useParams, useHistory } from "react-router-dom"
-import { Body } from "./styles"
+import { Body, Form, Main, Img } from "./styles"
 import { countries } from "../../constants/countries"
 import { useState } from "react"
 import axios from "axios"
 import { person, urlBase } from "../../constants/constants"
 import { Header } from "../../components/components/Header/Header"
+import Astro from "../../img/astro.jpg"
 
 
 const ApplicationForm = () => {
@@ -48,7 +49,6 @@ const ApplicationForm = () => {
 
         axios.post(`${urlBase}/${person}/trips/${params.id}/apply`, body)
             .then((res) => {
-                console.log("Requisiçao OK", res.data)
                 alert("Candidatura registrada com sucesso!")
                 setName("")
                 setAge("")
@@ -58,7 +58,7 @@ const ApplicationForm = () => {
                 history.push(`/list-trip`)
             })
             .catch((err) => {
-                console.log("Erro Catch da requisição", err)
+                alert("Erro na requisição", err)
             });
     }
 
@@ -70,48 +70,56 @@ const ApplicationForm = () => {
 
         <Body>
             <Header />
-            <h1>Inscreva-se para uma viagem</h1>
 
-                <input
-                    placeholder={"Nome"}
-                    required
-                    onChange={onChangeName}
-                    value={name} />
-                <input
-                    placeholder={"Idade"}
-                    value={age}
-                    required
-                    onChange={onChangeAge} />
-                <input
-                    placeholder={"Texto de Candidatura"}
-                    value={applicationText}
-                    required
-                    onChange={onChangeText} />
-                <input
-                    value={profession}
-                    placeholder={"Profissão"}
-                    required
-                    onChange={onChangeProfession} />
+            <Main>
 
-                <select
-                    placeholder={"País"}
-                    name={"country"}
-                    value={country}
-                    onChange={onChangeCountry}
-                    required>
+                <Img src ={Astro} alt="imagem"/>
 
-                    <option value={""}>Escolha um País</option>
-                    {countries.map((country) => {
-                        return <option value={country} key={country}>{country}</option>
-                    })}
+                <Form>
 
-                </select>
+                    <h1>Inscreva-se para a viagem selecionada</h1>
+                    <input
+                        placeholder={"Nome"}
+                        required
+                        onChange={onChangeName}
+                        value={name} />
+                    <input
+                        placeholder={"Idade"}
+                        value={age}
+                        required
+                        onChange={onChangeAge} />
+                    <input
+                        placeholder={"Texto de Candidatura"}
+                        value={applicationText}
+                        required
+                        onChange={onChangeText} />
+                    <input
+                        value={profession}
+                        placeholder={"Profissão"}
+                        required
+                        onChange={onChangeProfession} />
 
-            <div>
-                <button onClick={goBack}>Voltar</button>
-                <button onClick={applyToTrip}>Enviar</button>
-            </div>
+                    <select
+                        placeholder={"País"}
+                        name={"country"}
+                        value={country}
+                        onChange={onChangeCountry}
+                        required>
 
+                        <option value={""}>Escolha um País</option>
+                        {countries.map((country) => {
+                            return <option value={country} key={country}>{country}</option>
+                        })}
+
+                    </select>
+
+                    <div>
+                        <button onClick={goBack}>Voltar</button>
+                        <button onClick={applyToTrip}>Enviar</button>
+                    </div>
+                </Form>
+
+            </Main>
         </Body>
     )
 }

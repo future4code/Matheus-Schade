@@ -22,16 +22,11 @@ export default function ListTripsPage(props) {
             <Header />
 
             <h1>Lista de Viagens</h1>
-            {/* Caso de loading */}
+ 
             {isLoadingTrips && <h2>Carregando</h2>}
-
-            {/* Caso de mensagem de erro */}
             {!isLoadingTrips && errorRequest && <p>{errorRequest.message} </p>}
-
-            {/* Caso de retorno vazio  */}
             {!isLoadingTrips && trips && trips.length === 0 && (<p> Não foi encontrado nenhum resultado </p>)}
 
-            {/* Caso de sucesso */}
             {trips && trips.map((item) => <EachTrip key={item.id}>
                 <h2>{item.name} </h2>
                 <p>Planeta a ser visitado: {item.planet}</p>

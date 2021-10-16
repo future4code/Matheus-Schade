@@ -17,8 +17,8 @@ export const Header = () => {
     return (
         <Head>
                 <button onClick={goBack}>Voltar</button>
+                <p>LabeX</p>
                 <button onClick={goToHome}>Home</button>
-
         </Head>
     )
 }

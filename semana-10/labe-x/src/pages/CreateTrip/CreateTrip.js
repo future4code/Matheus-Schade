@@ -20,19 +20,6 @@ export const CreateTrip = () => {
         description: "",
         durationInDays: "",
     })
-    // const [form, setForm] = useState({
-    //     name: "",
-    //     planet: "",
-    //     date: "",
-    //     description: "",
-    //     durationInDays: "",
-    // })
-
-    // const onChangeForm = (event) => {
-    //     const { name, value } = event.target
-    //     setForm({ ...form, [name]: value })
-    //     // setForm({ ...form, [event.target.name]: event.target.value })
-    // }
 
     const newTripAdmin = (event) => {
         event.preventDefault()
@@ -43,13 +30,10 @@ export const CreateTrip = () => {
             }
         })
             .then((res) => {
-                console.log("Requisiçao OK", res.data)
                 alert("Viagem criada com sucesso!")
-                // history.push(`/admin`)
                 cleanFields()
             })
             .catch((err) => {
-                console.log("Erro Catch da requisição", err.messagem)
                 alert(`Não foi possível criar essa viagem. Tente novamente mais tarde!`)
             });
     }

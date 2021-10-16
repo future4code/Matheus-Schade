@@ -20,19 +20,17 @@ const Login = () => {
 
     const onSubmitLogin = (event) => {
         event.preventDefault()
-        console.log(email, password)
         const body = {
             email: email,
             password: password,
         }
         axios.post(`${urlBase}/${person}/login`, body)
             .then((response) => {
-                console.log(`DEU CERTO: `, response.data.token)
                 localStorage.setItem(`token`, response.data.token)
                 history.push(`/admin`)
 
             }).catch((error) => {
-                console.log(`Deu errado: `, error)
+                alert(`A requisição falhou: `, error)
             })
     }
 

@@ -25,7 +25,7 @@ export const AdminHome = () => {
         <Body>
             <Header />
 
-            <h1>Admin Home</h1>
+            <h1>Administrador</h1>
 
             <ButtonCard>
 
