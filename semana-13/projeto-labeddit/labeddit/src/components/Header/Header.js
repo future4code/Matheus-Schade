@@ -1,21 +1,25 @@
 import React from "react"
-import { Head } from "./styled";
+import { Head, RightButton, LeftButton } from "./styled";
+import { LogoIcon } from "./styled"
+import { goToFeed } from "../../routes/coordinator"
+import { useHistory } from "react-router-dom"
 
 
 const Header = () => {
+  const history = useHistory()
   return (
 
     <Head>
 
-      <button>
+      <LeftButton>
         Left Button
-      </button>
+      </LeftButton>
 
-      <h1>Título</h1>
+      <h1 onClick={() => goToFeed(history)}>labEddit  <LogoIcon /></h1>
 
-      <button>
+      <RightButton>
         Right Button
-      </button>
+      </RightButton>
 
     </Head>
   )
