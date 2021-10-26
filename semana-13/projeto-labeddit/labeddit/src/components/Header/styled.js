@@ -3,7 +3,7 @@ import { Color1, Color5 } from "../../constants/colors"
 import { FaUserFriends } from "react-icons/fa"
 
 export const Head = styled.div`
-width: 100%;
+width: 100vw;
 height: 10vh;
 background-color: ${Color1};
 display: flex;
@@ -11,7 +11,7 @@ align-items: center;
 justify-content: space-between;
 position: absolute;
 top: 0px;
-box-shadow: 5px 5px 5px lightgray;
+box-shadow: 3px 3px 3px gray;
 h1{
     color: ${Color5};
     display: flex;
@@ -30,18 +30,17 @@ cursor: pointer;
 `
 
 export const LeftButton = styled.button`
-margin-left: 25px;
+margin-left: 3vw;
 height: 2.4em;
 width: 12vw;
-color: ${Color5};
-cursor: pointer;
+color: ${Color1};
 border: none;
 font-size: 20px;
 background-color: ${Color1};
 `
 
 export const RightButton = styled.button`
-margin-right: 25px;
+margin-right: 3vw;
 height: 2.4em;
 width: 12vw;
 border: none;

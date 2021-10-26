@@ -1,5 +1,14 @@
 import styled from "styled-components"
-import { Color5 } from "../../constants/colors";
+import { Color1, Color4, Color5 } from "../../constants/colors";
+
+export const LoginImage = styled.div`
+width: 33vw;
+width: 33.25vw;
+img {
+    width: 100%;
+    max-height: 80vh;
+}
+`
 
 export const LoginScreen = styled.div`
 display: flex;
@@ -18,18 +27,23 @@ align-items: center;
 width: 100%;
 
 input {
-    margin-top: 10px;
-    width: 24%;
+    margin-top: 2.5vh;
+    width: 33%;
     height: 2.4em;
+    border: 1px solid ${Color1};
+    border-radius: 10px;
+    text-align: center;
 }
 button {
-    margin-top: 10px;
+    margin-top: 2.5vh;
     height: 2.4em;
-    width: 8vw;
-    border: 1px solid grey;
+    width: 33.6vw;
+    border: 1px solid ${Color1};
     border-radius: 10px;
     cursor: pointer;
-    background-color: ${Color5};
+    background-color: ${Color1};
+    color: white;
+    box-shadow: 2px 2px 2px gray;
 }
 `
 
@@ -38,4 +52,25 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+`
+
+export const CadastroButton = styled.button`
+    margin-top: 5vh;
+    height: 2.4em;
+    width: 33.6vw;
+    border: none;
+    cursor: pointer;
+    color: ${Color1};
+    background-color: white;
+    
+    :hover {
+        background-color: ${Color5};
+        border: 1px solid ${Color1};
+        border-radius: 10px;
+    }
+    :active {
+        background-color: ${Color4};
+        border: 1px solid ${Color1};
+        border-radius: 10px;
+    }
 `

@@ -1,12 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Head, RightButton, LeftButton } from "./styled";
 import { LogoIcon } from "./styled"
 import { goToFeed } from "../../routes/coordinator"
 import { useHistory } from "react-router-dom"
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 
 const Header = () => {
   const history = useHistory()
+
+  const { rightButtonText, rightButtonAction } = useContext(GlobalContext)
+
+
   return (
 
     <Head>
@@ -15,10 +20,10 @@ const Header = () => {
         Left Button
       </LeftButton>
 
-      <h1 onClick={() => goToFeed(history)}>labEddit  <LogoIcon /></h1>
+      <h1 onClick={() => goToFeed(history)}>labEddit <LogoIcon /></h1>
 
-      <RightButton>
-        Right Button
+      <RightButton onClick={() => rightButtonAction(history)}>
+        {rightButtonText}
       </RightButton>
 
     </Head>
