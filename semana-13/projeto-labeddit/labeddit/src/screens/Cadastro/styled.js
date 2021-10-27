@@ -4,15 +4,15 @@ import { Color1, Color4, Color5 } from "../../constants/colors";
 export const SignUpScreen = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
 width: 100vw;
-min-height: 100vh;
+height: 100vh;
 `
 
 export const SignUpImage = styled.div`
 width: 33.25vw;
-margin-top: 50px;
+margin-top: 25px;
 img {
     width: 100%;
     max-height: 80vh;
@@ -33,6 +33,8 @@ input {
     border: 1px solid ${Color1};
     border-radius: 10px;
     text-align: center;
+    font-weight: bold;
+    color: ${Color1};
 }
 button {
     margin-top: 2.5vh;
@@ -64,12 +66,10 @@ export const LoginButton = styled.button`
     
     :hover {
         background-color: ${Color5};
-        border: 1px solid ${Color1};
         border-radius: 10px;
     }
     :active {
         background-color: ${Color4};
-        border: 1px solid ${Color1};
         border-radius: 10px;
     }
 `

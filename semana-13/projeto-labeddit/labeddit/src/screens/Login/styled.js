@@ -2,8 +2,8 @@ import styled from "styled-components"
 import { Color1, Color4, Color5 } from "../../constants/colors";
 
 export const LoginImage = styled.div`
-width: 33vw;
 width: 33.25vw;
+margin-top: 25px;
 img {
     width: 100%;
     max-height: 80vh;
@@ -13,10 +13,10 @@ img {
 export const LoginScreen = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
 width: 100vw;
-min-height: 100vh;
+height: 100vh;
 `
 
 export const Form = styled.form`
@@ -33,6 +33,8 @@ input {
     border: 1px solid ${Color1};
     border-radius: 10px;
     text-align: center;
+    font-weight: bold;
+    color: ${Color1};
 }
 button {
     margin-top: 2.5vh;
@@ -43,7 +45,7 @@ button {
     cursor: pointer;
     background-color: ${Color1};
     color: white;
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 3px 3px 3px gray;
 }
 `
 
@@ -65,12 +67,10 @@ export const CadastroButton = styled.button`
     
     :hover {
         background-color: ${Color5};
-        border: 1px solid ${Color1};
         border-radius: 10px;
     }
     :active {
         background-color: ${Color4};
-        border: 1px solid ${Color1};
         border-radius: 10px;
     }
 `

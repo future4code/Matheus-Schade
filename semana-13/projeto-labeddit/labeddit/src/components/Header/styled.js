@@ -9,8 +9,6 @@ background-color: ${Color1};
 display: flex;
 align-items: center;
 justify-content: space-between;
-position: absolute;
-top: 0px;
 box-shadow: 3px 3px 3px gray;
 h1{
     color: ${Color5};

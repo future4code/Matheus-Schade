@@ -1,11 +1,6 @@
 import styled from "styled-components"
-import { Color1, Color5 } from "../../constants/colors"
+import { Color1, Color5 } from "../../../constants/colors"
 import { BsArrowUpCircleFill, BsArrowDownCircleFill } from "react-icons/bs"
-
-export const Date = styled.p`
-margin-right: 10px;
-color: gray;
-`
 
 export const UpArrow = styled(BsArrowUpCircleFill)`
 cursor: pointer;
@@ -62,6 +57,10 @@ margin-right: 8px;
 cursor: pointer;
 `
 
+export const Date =styled.p`
+color: gray;
+`
+
 export const Enjoy = styled.div`
 max-width: 45%;
 margin-left: 8px;
@@ -75,7 +74,7 @@ margin: 0 10px;
 `
 
 export const DetailButton = styled.div`
-margin-right: 1.9px;
+margin-right: 1px;
 width: 8vw;
 font-size: 12px;
 height: 100%;
@@ -90,35 +89,4 @@ align-items: center;
 font-weight: bold;
 color: ${Color5};
 cursor: pointer;
-`
-
-export const CommentForm = styled.form`
-width: 49.75vw;
-margin: 0 auto;
-input {
-    width: 49.5vw;
-    min-height: 20vh;
-    text-align: center;
-    margin-top: 25px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border: 1px solid grey;
-    margin-bottom: 0px;
-    box-shadow: 3px 3px 3px gray;
-}
-button {
-    width: 49.9vw;
-    margin: 0 auto;
-    cursor: pointer;
-    height: 2.4em;
-    margin-top: -2.5px;
-    border: 1px solid ${Color1};
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    cursor: pointer;
-    background-color: ${Color1};
-    color: white;
-    box-shadow: 3px 3px 3px gray;
-    font-weight: bold;
-}
 `
