@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { Form, LoginScreen, Cadastro, CadastroButton, LoginImage } from "./styled"
 import { goToCadastro } from "../../routes/coordinator"
 import { useHistory } from "react-router-dom"
@@ -8,9 +8,10 @@ import loginImg from "../../assets/login.jpg"
 
 const Login = () => {
   const history = useHistory()
+  const token = localStorage.getItem("token")
   useUnprotectedPage()
 
-  const { onSubmitForm, form, onChange } = useContext(GlobalContext);
+  const { onSubmitForm, form, onChange} = useContext(GlobalContext);
 
   return (
     <LoginScreen>

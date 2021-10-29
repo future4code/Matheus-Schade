@@ -17,6 +17,7 @@ justify-content: flex-start;
 align-items: center;
 width: 100vw;
 height: 100vh;
+margin-top: 10vh;
 `
 
 export const Form = styled.form`

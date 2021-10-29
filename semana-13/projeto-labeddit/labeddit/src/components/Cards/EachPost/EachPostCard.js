@@ -1,16 +1,19 @@
-import React from "react"
+import React, { useContext } from "react"
 import { CardArea, Date, ComentsAndEnjoys, Text, UserName, Coments, Enjoy, CountEnjoys, UpArrow, DownArrow, DetailButton } from "./styled"
 import { useHistory } from "react-router";
 import { goToPosts } from "../../../routes/coordinator";
+import { GlobalContext } from "../../../contexts/GlobalContext";
+
 
 const EachPostCard = ({ post }) => {
     const history = useHistory()
+    const { enjoyPost, hatePost, stringToDate } = useContext(GlobalContext);
 
     return (
         <CardArea>
             <UserName>
                 <p><strong>{post.username}</strong></p>
-                <Date>criado em {post.createdAt}</Date>
+                <Date>criado em {stringToDate(post && post.createdAt)}</Date>
                 <DetailButton onClick={() => goToPosts(history, post.id)}>Detalhes</DetailButton>
             </UserName>
             <Text>
@@ -19,13 +22,13 @@ const EachPostCard = ({ post }) => {
             </Text>
             <ComentsAndEnjoys>
                 <Enjoy>
-                    <UpArrow />
-                    <CountEnjoys>{post.voteSum ? post.voteSum : "0"}</CountEnjoys>
-                    <DownArrow />
+                    <UpArrow onClick={() => enjoyPost("posts", post.id)} />
+                    <CountEnjoys>{post && post.voteSum ? post.voteSum : "0"}</CountEnjoys>
+                    <DownArrow onClick={() => hatePost("posts", post.id)} />
 
                 </Enjoy>
-                <Coments>{post.commentCount === null ? (`Nenhum Comentário`) : (
-                    post.commentCount.length === 1 ? (`${post.commentCount.length} Comentário`) : (`${post.commentCount.length} Comentários`)
+                <Coments>{post && post.commentCount === null ? (`Nenhum Comentário`) : (
+                    (post && post.commentCount < 2 ? `${post && post.commentCount} Comentário` : `${post && post.commentCount} Comentários`)
                 )}</Coments>
             </ComentsAndEnjoys>
         </CardArea>

@@ -2,12 +2,13 @@ import styled from "styled-components"
 import { Color1, Color4, Color5 } from "../../constants/colors";
 
 export const SignUpScreen = styled.div`
+margin-top: 10vh;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 width: 100vw;
-height: 100vh;
+max-height: 100vh;
 `
 
 export const SignUpImage = styled.div`

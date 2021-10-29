@@ -15,25 +15,30 @@ color: ${Color1};
 export const CardArea = styled.div`
 width: 50vw;
 min-height: 10vh;
-border: 1px solid grey;
+border: none;
 display: flex;
 flex-direction: column;
 margin: 0 auto;
-margin-top: 3vh;
-margin-bottom: 2vh;
+margin-top: 2vh;
+margin-bottom: 1vh;
 border-radius: 5px;
 border-top-right-radius: 7px;
 box-shadow: 3px 3px 3px gray;
+overflow: hidden;
+background-color: ${Color5};
 `
 
 export const UserName = styled.div`
-width: 49.5vw;
-height: 3vh;
+width: 50vw;
+height: 3.25vh;
 border-bottom: 1px solid grey;
 padding-left: 8px;
 display: flex;
 align-items: center;
 justify-content: space-between;
+overflow: hidden;
+background-color: ${Color1};
+color: ${Color5};
 `
 
 export const Text = styled.div`
@@ -57,13 +62,15 @@ margin-right: 8px;
 cursor: pointer;
 `
 
-export const Date =styled.p`
+export const Date = styled.p`
 color: gray;
+font-size: 10px;
+color: ${Color5};
 `
 
 export const Enjoy = styled.div`
 max-width: 45%;
-margin-left: 8px;
+margin-left: 10px;
 display: flex;
 align-items: center;
 `
@@ -74,10 +81,10 @@ margin: 0 10px;
 `
 
 export const DetailButton = styled.div`
-margin-right: 1px;
+padding-right: 5px;
 width: 8vw;
 font-size: 12px;
-height: 100%;
+height: 3vh;
 border: none;
 border-top-right-radius: 5px;
 background-color: ${Color1};

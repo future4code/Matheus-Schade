@@ -2,21 +2,26 @@ import React, { useContext } from "react"
 import useProtectedPage from "../../hooks/useProtectedPage"
 import { GlobalContext } from "../../contexts/GlobalContext";
 import EachPostCard from "../../components/Cards/EachPost/EachPostCard"
-import { Form, Body,PostTitle, PostComment } from "./styled";
+import { Form, Body, PostTitle, PostComment } from "./styled";
 import { useHistory } from "react-router-dom"
 
 const Feed = () => {
   useProtectedPage()
   const history = useHistory()
-  const { postList, onSubmitComment, form, onChange } = useContext(GlobalContext);
-  
-  return (
+  const { postList, onSubmitNewPost, form, onChange } = useContext(GlobalContext);
 
+  const list = postList && postList.map((item) => {
+    return <EachPostCard
+      key={item.id}
+      post={item} />
+  })
+
+  return (
 
     <Body>
 
-      <Form onSubmit={(event) => onSubmitComment(event, history)}>
-      <PostTitle
+      <Form onSubmit={(event) => onSubmitNewPost(event, history)}>
+        <PostTitle
           placeholder={"Título do Post"}
           name={"title"}
           value={form.title}
@@ -37,12 +42,9 @@ const Feed = () => {
 
       </Form>
 
+      {postList.length >= 1 ? list : <h3> Carregando, aguarde...</ h3>}
 
-      {postList.map((item) => {
-        return <EachPostCard
-          key={item.id}
-          post={item} />
-      })}
+
     </Body>
   )
 }

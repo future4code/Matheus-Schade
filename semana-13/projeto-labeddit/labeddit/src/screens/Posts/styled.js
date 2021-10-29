@@ -2,9 +2,18 @@ import styled from "styled-components"
 import { Color1, Color5 } from "../../constants/colors"
 import { BsArrowUpCircleFill, BsArrowDownCircleFill } from "react-icons/bs"
 
+export const Body = styled.div`
+margin-top: 13vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+`
+
 export const Date = styled.p`
-margin-right: 10px;
-color: gray;
+margin-right: 12px;
+color: ${Color5};
+font-size: 10px;
 `
 
 export const UpArrow = styled(BsArrowUpCircleFill)`
@@ -18,33 +27,39 @@ color: ${Color1};
 `
 
 export const CardArea = styled.div`
-width: 50vw;
+width: 50.2vw;
 min-height: 10vh;
-border: 1px solid grey;
+border: none;
 display: flex;
 flex-direction: column;
 margin: 0 auto;
-margin-top: 3vh;
+margin-top: 2vh;
 margin-bottom: 2vh;
 border-radius: 5px;
-border-top-right-radius: 7px;
 box-shadow: 3px 3px 3px gray;
+overflow: hidden;
+background-color: ${Color5};
 `
 
 export const UserName = styled.div`
-width: 49.5vw;
+width: 49.8vw;
 height: 3vh;
 border-bottom: 1px solid grey;
 padding-left: 8px;
 display: flex;
 align-items: center;
 justify-content: space-between;
+background: ${Color1};
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+color: ${Color5};
 `
 
 export const Text = styled.div`
 width: 90%;
 min-height: 6vh;
 margin-left: 12px;
+
 `
 
 export const ComentsAndEnjoys = styled.div`
@@ -59,7 +74,6 @@ justify-content: space-between;
 export const Coments = styled.div`
 max-width: 50%;
 margin-right: 8px;
-cursor: pointer;
 `
 
 export const Enjoy = styled.div`
@@ -93,32 +107,40 @@ cursor: pointer;
 `
 
 export const CommentForm = styled.form`
-width: 49.75vw;
+width: 50.2vw;
+height: 19vh;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+box-shadow: 3px 3px 3px gray;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
 margin: 0 auto;
 input {
-    width: 49.5vw;
-    min-height: 20vh;
+    width: 100%;
+    height: 15vh;
     text-align: center;
-    margin-top: 25px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border: 1px solid grey;
     margin-bottom: 0px;
-    box-shadow: 3px 3px 3px gray;
+    outline: none; 
+    border: none;
+    background-color: ${Color5};
 }
 button {
-    width: 49.9vw;
+    width: 50.5vw;
     margin: 0 auto;
     cursor: pointer;
-    height: 2.4em;
-    margin-top: -2.5px;
+    height: 4vh;
     border: 1px solid ${Color1};
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     cursor: pointer;
     background-color: ${Color1};
     color: white;
-    box-shadow: 3px 3px 3px gray;
     font-weight: bold;
+    outline: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom: 1px solid ${Color1};
 }
 `

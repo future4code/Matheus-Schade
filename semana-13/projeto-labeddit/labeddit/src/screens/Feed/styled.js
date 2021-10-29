@@ -1,57 +1,61 @@
 import styled from "styled-components"
-import { Color1, Color4, Color5 } from "../../constants/colors";
+import { Color1, Color5 } from "../../constants/colors";
 
 export const Body = styled.div`
+padding-top: 20px;
 width: 49.75vw;
 display: flex;
 flex-direction: column;
 align-items: center;
 margin: 0 auto;
+margin-top: 10vh;
 `
 
 export const PostTitle = styled.input`
-border-top-left-radius: 5px;
-border-top-right-radius: 5px;
-min-height: 2em;
-border-left: 1px solid grey;
-border-right: 1px solid grey;
-border-top: 1px solid grey;
+height: 4vh;
+border: none;
+border-bottom: 1px solid grey;
 text-align: center;
-width: 49.5vw;
-margin-top: 25px;
-box-shadow: 3px 3px 3px gray;
-margin-bottom: -1px;
+width: 50vw;
+outline: none;
+background-color: ${Color5};
 `
 
 export const PostComment = styled.input`
-width: 49.5vw;
-min-height: 20vh;
+width: 50vw;
+min-height: 15vh;
 text-align: center;
-border-left: 1px solid grey;
-border-right: 1px solid grey;
-border-bottom: 1px solid grey;
-border-top: none;
+border: none;
 margin-bottom: 0px;
-box-shadow: 3px 3px 3px gray;
+outline: none;
+background-color: ${Color5};
 `
 
 export const Form = styled.form`
-width: 49.75vw;
+width: 49.8vw;
+height: 23.9vh;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+box-shadow: 3px 3px 3px gray;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
 margin: 0 auto;
 
 button {
-    width: 49.9vw;
+    width: 102%;
     margin: 0 auto;
     cursor: pointer;
-    height: 2.4em;
-    margin-top: -2.5px;
-    border: 1px solid ${Color1};
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    height: 4vh;
+    border: none;
     cursor: pointer;
     background-color: ${Color1};
     color: white;
-    box-shadow: 3px 3px 3px gray;
     font-weight: bold;
+    border: 2px solid ${Color1};
+    outline: none;
 }
 `

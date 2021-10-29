@@ -1,12 +1,24 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect } from "react"
 import useProtectedPage from "../../hooks/useProtectedPage";
-import { CardArea, Date, CommentForm, ComentsAndEnjoys, Text, UserName, Coments, Enjoy, CountEnjoys, UpArrow, DownArrow, DetailButton } from "./styled"
+import { Body, CardArea, Date, CommentForm, ComentsAndEnjoys, Text, UserName, Enjoy, CountEnjoys, UpArrow, DownArrow } from "./styled"
 import { useParams } from "react-router-dom";
 import { GlobalContext } from "../../contexts/GlobalContext";
 
 const Posts = () => {
+  useProtectedPage()
   const params = useParams()
-  const { postList } = useContext(GlobalContext);
+  const { postList,
+    commentList,
+    getPostComments,
+    form,
+    onChange,
+    onSubmitNewComment,
+    enjoyPost,
+    hatePost,
+    enjoyComment,
+    hateComment,
+    stringToDate,
+  } = useContext(GlobalContext);
 
   const filteredPost = postList.filter((item) => {
     return item.id === params.id
@@ -14,16 +26,40 @@ const Posts = () => {
 
   const post = filteredPost[0]
 
-  console.log(post)
+  useEffect(() => {
+    getPostComments(params.id)
+  }, [])
 
-  useProtectedPage()
+  const messageList = commentList && commentList.map((item) => {
+    return (<CardArea key={item.id}>
+      <UserName>
+        <p><strong>{item && item.username}</strong> respondeu</p>
+        <Date>criado em {stringToDate(item && item.createdAt)}</Date>
+      </UserName>
+      <Text>
+        <h3>{item && item.title}</h3>
+        <p>{item && item.body}</p>
+      </Text>
+      <ComentsAndEnjoys>
+        <Enjoy>
+          <UpArrow onClick={() => enjoyComment(params.id, item.id)} />
+          <CountEnjoys>{item && item.voteSum === null ? "0" : item && item.voteSum}</CountEnjoys>
+          <DownArrow onClick={(id) => hateComment(params.id, item.id)} />
+        </Enjoy>
+      </ComentsAndEnjoys>
+    </CardArea>
+    )
+  })
+
   return (
 
-    <div>
-      <CardArea>
+    <Body>
+
+      {post ? <CardArea>
+
         <UserName>
-          <p><strong>{post && post.username}</strong></p>
-          <Date>criado em {post && post.createdAt}</Date>
+          <p><strong>{post && post.username}</strong> comentou </p>
+          <Date>criado em {stringToDate(post && post.createdAt)}</Date>
         </UserName>
         <Text>
           <h3>{post && post.title}</h3>
@@ -31,31 +67,33 @@ const Posts = () => {
         </Text>
         <ComentsAndEnjoys>
           <Enjoy>
-            <UpArrow />
+            <UpArrow onClick={() => enjoyPost("posts", post.id)} />
             <CountEnjoys>{post && post.voteSum === null ? "0" : post && post.voteSum}</CountEnjoys>
-            <DownArrow />
-
+            <DownArrow onClick={() => hatePost("posts", post.id)} />
           </Enjoy>
-          <Coments>{post && post.commentCount === null ? (`Nenhum Comentário`) : (
-            post && post.commentCount.length === 1 ? (`${post && post.commentCount.length} Comentário`) : (`${post && post.commentCount.length} Comentários`)
-          )}</Coments>
+
         </ComentsAndEnjoys>
 
+      </CardArea> : <h3> Carregando post, aguarde...</ h3>}
 
-      </CardArea>
+      <CommentForm onSubmit={(event) => onSubmitNewComment(event, params.id)}>
 
-
-      <CommentForm>
-        
         <input
           placeholder={"Escreva seu Comentário"}
+          name={"body"}
+          value={form.body}
+          onChange={onChange}
+          required
+          type={"text"}
         />
         <button>Enviar</button>
       </CommentForm>
 
 
+        {commentList.length >= 1 ? messageList : <h3> Carregando respostas, aguarde...</ h3>}
+    
 
-    </div>
+    </Body>
   )
 }
 
