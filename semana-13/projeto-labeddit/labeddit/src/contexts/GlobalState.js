@@ -21,7 +21,7 @@ const GlobalState = (props) => {
         let year = nwd && nwd[0]
         let month = nwd && nwd[1]
 
-        let newdt = nwd &&nwd[2].split("T")
+        let newdt = nwd && nwd[2].split("T")
         let day = newdt && newdt[0]
         let newHour = newdt && newdt[1].split(".")
         let moment = newHour && newHour[0]
