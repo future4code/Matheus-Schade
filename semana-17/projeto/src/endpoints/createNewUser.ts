@@ -37,7 +37,7 @@ export const createNewUser = async (req: Request, res: Response) => {
          res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!")
 
       else
-         res.send(error.message)
+         res.send(error.sqlMessage || error.message)
    }
 };
 

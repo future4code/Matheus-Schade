@@ -6,8 +6,6 @@ export const createNewProduct = async (req: Request, res: Response) => {
 
       const { name, price, image_url } = req.body
 
-      console.log(`1: `, name, price, image_url)
-
       if (!name || !price || !image_url) {
          res.statusCode = 422
          throw new Error("Os campos 'name', 'email' e 'password' são obrigatórios")
@@ -23,8 +21,6 @@ export const createNewProduct = async (req: Request, res: Response) => {
          throw new Error("Digite uma url válida para imagens, contendo '.jpeg' ou '.jpg'")
       }
 
-      console.log(`2: `, name, price, image_url)
-
       await connection("labecommerce_products")
          .insert({
             id: Date.now().toString(),
@@ -36,13 +32,12 @@ export const createNewProduct = async (req: Request, res: Response) => {
       res.status(201).send('Produto cadastrado com sucesso!');
 
    } catch (error) {
-      console.log(`3: `, error)
 
       if (res.statusCode === 200)
-      res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!")
+         res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!")
 
       else
-         res.send(error.message)
+         res.send(error.sqlMessage || error.message)
    }
 
 };

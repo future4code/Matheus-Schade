@@ -17,7 +17,7 @@ app.get("/users", getAllUsers)
 app.post("/products", createNewProduct)
 app.get("/products", getAllProducts)
 app.post("/purchases", newPurchase)
-app.get("/purchases", getAllPurchasesByUser)
+app.get("/users/:user_id/purchases", getAllPurchasesByUser)
 
 app.get("/", (req: Request, res: Response) => { res.send("Hello World!") })
 
