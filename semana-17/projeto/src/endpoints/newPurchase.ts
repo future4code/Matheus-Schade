@@ -44,11 +44,9 @@ export const newPurchase = async (req: Request, res: Response) => {
 
       if (res.statusCode === 200)
          res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!")
-
       else
          res.send(error.sqlMessage || error.message)
    }
-
 };
 
 export default newPurchase
