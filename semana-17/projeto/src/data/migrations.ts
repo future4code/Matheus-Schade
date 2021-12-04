@@ -21,9 +21,9 @@ const createTables = () => connection
 
       CREATE TABLE IF NOT EXISTS labecommerce_purchases (
          id VARCHAR(255) PRIMARY KEY,
-         user_id VARCHAR(255) UNIQUE NOT NULL,
-         product_id VARCHAR(255) UNIQUE NOT NULL,
-         quantity INT NOT NULL,
+         user_id VARCHAR(255) NOT NULL,
+         product_id VARCHAR(255) NOT NULL,
+         quantity INT NOT NULnL,
          total_price FLOAT NOT NULL,
          FOREIGN KEY (user_id) REFERENCES labecommerce_users(id),
          FOREIGN KEY (product_id) REFERENCES labecommerce_products(id)

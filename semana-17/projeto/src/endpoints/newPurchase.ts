@@ -1,50 +1,52 @@
 import { Request, Response } from "express"
 import { connection } from "../data/connection";
-import { getProducts } from "../services/getProducts";
-import { getUsers } from "../services/getUsers";
+import { user } from "../types";
+import { product } from "../types";
+import { purchase } from "../types";
 
 export const newPurchase = async (req: Request, res: Response) => {
    try {
+      const { product_id, user_id, quantity } = req.body
 
-      const { user_id, product_id, quantity } = req.body
+      const [result]: user[] = await connection("labecommerce_users")
+         .select()
+         .where({ id: user_id })
 
-      if (!product_id || !quantity || !user_id) {
-         res.statusCode = 422
-         throw new Error("Os campos 'product_id', 'quantity' e 'user_id' são obrigatórios | 'quantity' não pode ter valor igual a 0!")
+      if (!result) {
+         throw new Error("Usuário não encontrado(user_id)")
       }
 
-      const productPrice = await getProducts(product_id)
-      const user = await getUsers(user_id)
+      const [product]: product[] = await connection("labecommerce_products")
+         .select()
+         .where({ id: product_id })
 
-      if (typeof productPrice === "number" && !isNaN(user)) {
-         const total_price = productPrice && (productPrice * quantity).toFixed(2)
-
-         await connection("labecommerce_purchases")
-            .insert({
-               id: Date.now().toString(),
-               user_id,
-               product_id,
-               quantity,
-               total_price
-            })
-
-         res.status(200).send(`Compra finalizada com sucesso! Valor total da compra: R$ ${total_price}`)
-         
-      } else {
-         if (typeof productPrice === "number") {
-            res.statusCode = 404
-            throw new Error("O 'user_id' não existe em nosso banco de dados!")
-         } else {
-            res.statusCode = 404
-            throw new Error("O 'product_id' não existe em nosso banco de dados!")
-         }
+      if (!product) {
+         throw new Error("Produto não encontrado(product_id)")
       }
+
+      const total_price = product.price * quantity
+
+      console.log(result)
+      console.log(product)
+      console.log(total_price)
+
+      const purchase: purchase = {
+         id: Date.now().toString(),
+         product_id,
+         user_id,
+         quantity,
+         total_price
+      }
+
+      await connection("labecommerce_purchases").insert(purchase)
+
+      res.status(200).send({ message: `Compra realizada com sucesso!` })
 
    } catch (error) {
 
       if (res.statusCode === 200)
-         res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!")
-
+         // res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!")
+         res.send(error.sqlMessage || error.message)
       else
          res.send(error.sqlMessage || error.message)
    }

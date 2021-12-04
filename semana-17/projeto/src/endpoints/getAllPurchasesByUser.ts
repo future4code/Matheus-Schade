@@ -1,29 +1,42 @@
 import { Request, Response } from "express"
 import { connection } from "../data/connection";
-import { purchase } from "../types";
-import { getUsers } from "../services/getUsers"
+import { user } from "../types";
 
 export const getAllPurchasesByUser = async (req: Request, res: Response) => {
    try {
 
-      const user_id = (req.params.user_id).toString()
-      const user = await getUsers(user_id)
+      const { user_id } = req.params
 
-      if (!isNaN(user)) {
-         const result = await connection("labecommerce_purchases")
-            .select("*")
-            .where({ user_id })
+      const [result]: user[] = await connection("labecommerce_users")
+         .where({ id: user_id })
 
-         if (!result) {
-            res.statusCode = 404
-            throw new Error(`Nenhuma compra foi encontrada para esse usuário!`)
-         }
-         const purchases = result && result.map(tuPurchase)
-         res.status(200).send(purchases[0])
-      } else {
-         res.statusCode = 404
-         throw new Error(`Nenhuma compra foi encontrada para esse usuário!`)
+      if (!result) {
+         throw new Error("Usuário não encontrado(user_id)")
       }
+
+      const data = await connection("labecommerce_purchases")
+         .select(
+            "labecommerce_purchases.id as purchase_id",
+            "labecommerce_purchases.product_id",
+            "labecommerce_products.name as product_name",
+            "labecommerce_products.image_url",
+            "labecommerce_products.price as product_price",
+            "labecommerce_purchases.quantity",
+            "labecommerce_purchases.total_price"
+         )
+         .innerJoin(
+            "labecommerce_users", // JOIN
+            "labecommerce_users.id", //ON = ESSE É IGUAL AO DE BAIXO
+            "labecommerce_purchases.user_id" // ON
+         )
+         .innerJoin(
+            "labecommerce_products", //JOIN
+            "labecommerce_products.id", // ON = ESSE É IGUAL AO DE BAIXO
+            "labecommerce_purchases.product_id" // ON
+         )
+         .where({ user_id })
+
+      res.status(200).send({ purchases: data })
 
    } catch (error) {
 
@@ -32,17 +45,6 @@ export const getAllPurchasesByUser = async (req: Request, res: Response) => {
       else
          res.send(error.sqlMessage || error.message)
    }
-
 };
-
-const tuPurchase = (input: any): purchase => {
-   return {
-      id: input.id,
-      user_id: input.user_id,
-      product_id: input.product_id,
-      quantity: input.quantity,
-      total_price: input.total_price,
-   }
-}
 
 export default getAllPurchasesByUser

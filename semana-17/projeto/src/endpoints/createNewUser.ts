@@ -3,7 +3,6 @@ import { connection } from "../data/connection";
 
 export const createNewUser = async (req: Request, res: Response) => {
    try {
-
       const { name, email, password } = req.body
 
       if (!name || !email || !password) {
@@ -35,7 +34,6 @@ export const createNewUser = async (req: Request, res: Response) => {
 
       if (res.statusCode === 200)
          res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!")
-
       else
          res.send(error.sqlMessage || error.message)
    }
