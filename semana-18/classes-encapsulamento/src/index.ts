@@ -27,7 +27,7 @@ class UserAccount {
 
 // a) Para que serve o construtor dentro de uma classe e como fazemos para chamá-lo?
 
-// O construtor é um método especial para criar e inicializar um objeto criado a partir de uma classe.
+// O construtor é um método especial para criar e inicializar um objeto criado a partir de uma classe. Chamamos com new NomeDaClasse
 
 // b) Copie o código abaixo para o seu exercício de hoje; crie uma instância dessa classe (dê o nome, 
 // cpf e idade que você quiser). Quantas vezes a mensagem "Chamando o construtor da classe User" foi impressa no terminal?
