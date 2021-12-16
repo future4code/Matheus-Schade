@@ -1,8 +1,6 @@
 import { Request, Response } from "express"
 import { FollowDatabase } from "../data/FollowDatabase"
-import { RecipeFeed } from "../entities/RecipeFeed"
 import { Authenticator } from "../services/Authenticator"
-
 
 export const getFeed = async (req: Request, res: Response) => {
     try {
@@ -31,9 +29,7 @@ export const getFeed = async (req: Request, res: Response) => {
         res.status(201).send(feed)
 
     } catch (error) {
-
         if (res.statusCode === 200) { res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!") }
         else { res.send(error.sqlMessage || error.message) }
-
     }
 }

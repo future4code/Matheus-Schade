@@ -49,9 +49,7 @@ export const followUser = async (req: Request, res: Response) => {
 
 
     } catch (error) {
-
         if (res.statusCode === 200) { res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!") }
         else { res.send(error.sqlMessage || error.message) }
-
     }
 }

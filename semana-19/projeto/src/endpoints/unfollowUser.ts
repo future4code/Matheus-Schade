@@ -36,17 +36,11 @@ export const unfollowUser = async (req: Request, res: Response) => {
         }
 
         const unfollow = new Unfollow(tokenData.id, userToUnfollowId)
-
         await new FollowDatabase().unfollowUser(unfollow)
-
         res.status(201).send({ message: "Unfollowed successfully!"})
 
-
     } catch (error) {
-
         if (res.statusCode === 200) { res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!") }
-        // if (res.statusCode === 200) { res.send(error.sqlMessage || error.message) }
         else { res.send(error.sqlMessage || error.message) }
-
     }
 }

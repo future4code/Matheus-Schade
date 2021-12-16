@@ -30,6 +30,4 @@ export class RecipeDatabase extends BaseDatabase {
             throw new Error(error.sqlMessage || error.message)
         }
     }
-
-   
 }

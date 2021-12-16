@@ -29,11 +29,8 @@ export const createRecipes = async (req: Request, res: Response) => {
 
         res.status(201).send({ message: "Receita criada com sucesso!", title, description, created_at:formatDate(created_at) })
 
-
     } catch (error) {
-
         if (res.statusCode === 200) { res.status(500).send("Sistema temporariamente indisponível. Tente novamente mais tarde!") }
         else { res.send(error.sqlMessage || error.message) }
-
     }
 }
