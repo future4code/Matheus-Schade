@@ -1,10 +1,10 @@
-export class Recipe {
+export class RecipeFeed {
     constructor(
         private id: string,
         private title: string,
         private description: string,
-        private userId: string,
-        private created_at: string
+        private created_at: string,
+        private name: string
     ) { }
 
     public getId() {
@@ -19,15 +19,15 @@ export class Recipe {
         return this.description
     }
 
-    public getUserId() {
-        return this.userId
+    public getName() {
+        return this.name
     }
 
     public getCriatedAt() {
         return this.created_at
     }
 
-    static toRecipeModel(data: any): Recipe {
-        return new Recipe(data.id, data.title, data.description, data.userId, data.created_at)
+    static toRecipeModel(data: any): RecipeFeed {
+        return new RecipeFeed(data.id, data.title, data.description, data.name, data.created_at)
     }
 }

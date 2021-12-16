@@ -19,28 +19,17 @@ export class RecipeDatabase extends BaseDatabase {
         }
     }
 
-    // public async findUserByEmail(email: string): Promise<User> {
-    //     try {
-    //         const user = await BaseDatabase.connection(`cookenu_user`).select(`*`).where({ email })
+    public async getRecipeById(id: string): Promise<Recipe> {
+        try {
 
-    //         return user[0] && User.toUserModel(user[0])
-
-    //     } catch (error) {
-    //         throw new Error(error.sqlMessage || error.message)
-    //     }
-    // }
+            const recipe = await BaseDatabase.connection(`cookenu_recipe`).select(`id`, `title`, `description`, 'created_at').where({ id })
+            return recipe[0] && Recipe.toRecipeModel(recipe[0])
 
 
-    // public async getUserById(id: string): Promise<User[]> {
-    //     try {
+        } catch (error) {
+            throw new Error(error.sqlMessage || error.message)
+        }
+    }
 
-    //         const user = await BaseDatabase.connection(`cookenu_user`).select(`id`, `name`, `email`).where({ id })
-
-    //         return user[0]
-
-
-    //     } catch (error) {
-    //         throw new Error(error.sqlMessage || error.message)
-    //     }
-    // }
+   
 }
