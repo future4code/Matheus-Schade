@@ -6,7 +6,7 @@ import { UserBusiness } from "../business/UserBusiness/UserBusiness"
 
 export const signupController = async (req: Request, res: Response) => {
    try {
-    const { name, email, password, role } = req.body
+      const { name, email, password, role } = req.body
 
       const token = await new UserBusiness().signupBusiness({ name, email, password, role })
 
@@ -20,3 +20,5 @@ export const signupController = async (req: Request, res: Response) => {
       res.status(400).send(error.message)
    }
 }
+
+

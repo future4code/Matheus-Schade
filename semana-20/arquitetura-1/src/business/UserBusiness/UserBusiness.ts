@@ -69,4 +69,59 @@ export class UserBusiness {
         }
     }
 
+    getAllBusiness = async (token: string): Promise<User[]> => {
+
+        try {
+
+            if (!token) {
+                throw new Error("Informe um token válido!")
+            }
+
+            const tokenData = new Authenticator().getTokenData(token)
+
+            if (!tokenData || tokenData.role !== "ADMIN") {
+                throw new Error("Sem autorização válida!")
+            }
+
+            const users = await new UserDatabase().getAllUsers()
+
+            return users
+
+        } catch (error) {
+            throw new Error(error.sqlMessage || error.message)
+        }
+
+    }
+
+    deleteUserBusiness = async (data: { id: string, token: string }): Promise<any> => {
+
+        try {
+
+            if (!data.token || !data.id) {
+                throw new Error("Informe um token e um id válido!")
+            }
+
+            const tokenData = new Authenticator().getTokenData(data.token)
+
+            if (!tokenData) {
+                throw new Error("Você não tem autorização para deletar usuários!")
+            }
+
+            if (tokenData.role !== "ADMIN") {
+                throw new Error("Sem autorização válida!")
+            }
+
+            const userDatabase = await new UserDatabase().findUserById(data.id) //verifica se o email já existe no banco de dados;
+
+            if (!userDatabase) { // se email não existe no banco de dados;
+                throw new Error('Insira um id válido!');
+            }
+
+            return await new UserDatabase().deleteUserById(data.id)
+
+        } catch (error) {
+            throw new Error(error.sqlMessage || error.message)
+        }
+
+    }
 }

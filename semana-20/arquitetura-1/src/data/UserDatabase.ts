@@ -44,9 +44,20 @@ export class UserDatabase extends BaseDatabase {
     public async getAllUsers(): Promise<User[]> {
         try {
 
-            const users = await BaseDatabase.connection(`User_Arq`).select(`id`, `name`, `email`, `role`)
+            const users = await BaseDatabase.connection(`User_Arq`).select(`*`)
             return users.map((user) => User.toUserModel(user))
+
+        } catch (error) {
+            console.log(error.sqlMessage || error.message)
+            throw new Error(error.sqlMessage || error.message)
+        }
+    }
+
+    public async deleteUserById(id: string): Promise<void> {
+        try {
             
+            await BaseDatabase.connection(`User_Arq`).delete().where({ id })
+
         } catch (error) {
             console.log(error.sqlMessage || error.message)
             throw new Error(error.sqlMessage || error.message)
